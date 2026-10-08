@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aprende JavaScript desde cero</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+
+<div class="pagina">
+
+  <!-- MENÚ LATERAL -->
+  <aside class="lateral">
+    <p class="marca"><span>JS</span> desde cero</p>
+    <p class="subtitulo">Curso interactivo para principiantes</p>
+
+    <nav>
+      <a href="#leccion1" id="nav1"><span class="num">1</span>Variables y tipos de datos</a>
+      <a href="#leccion2" id="nav2"><span class="num">2</span>Operadores y texto</a>
+      <a href="#leccion3" id="nav3"><span class="num">3</span>Condicionales</a>
+      <a href="#leccion4" id="nav4"><span class="num">4</span>Bucles</a>
+      <a href="#leccion5" id="nav5"><span class="num">5</span>Funciones</a>
+      <a href="#leccion6" id="nav6"><span class="num">6</span>Arreglos (listas)</a>
+      <a href="#leccion7" id="nav7"><span class="num">7</span>Objetos</a>
+      <a href="#leccion8" id="nav8"><span class="num">8</span>JavaScript en la página (DOM)</a>
+    </nav>
+
+    <div class="progreso">
+      <span id="textoProgreso"></span>
+      <div class="fondo-barra"><div id="barra"></div></div>
+    </div>
+  </aside>
+
+  <!-- CONTENIDO -->
+  <main>
+    <h1>Aprende JavaScript escribiendo código real</h1>
+    <p class="intro">No necesitas instalar nada. Cada lección tiene una explicación corta, un ejemplo que puedes modificar y un ejercicio que se comprueba solo. Empieza probando el editor:</p>
+
+    <!-- EDITOR DE INICIO -->
+    <div class="inicio">
+      <div class="caja ejemplo">
+        <div class="titulo">Tu primer programa</div>
+        <textarea id="ejemplo0" rows="5" spellcheck="false">console.log("¡Hola, mundo!");
+console.log(2 + 3 * 4);
+console.log("Cambia este código y vuelve a ejecutar");</textarea>
+        <div class="botones">
+          <button class="amarillo" onclick="correrEjemplo(0)">Ejecutar</button>
+          <button onclick="restablecer('ejemplo', 0)">Restablecer</button>
+        </div>
+        <pre id="salida0" class="salida"></pre>
+      </div>
+    </div>
+
+    <!-- LECCIÓN 1 -->
+    <section class="leccion" id="leccion1">
+      <h2><span class="numero">1</span> Variables y tipos de datos</h2>
+      <p>Una <b>variable</b> es una caja con nombre donde guardas un valor. Usa <code>const</code> si el valor no va a cambiar y <code>let</code> si sí. Los tipos más comunes son texto (<code>"string"</code>), número (<code>number</code>) y verdadero/falso (<code>boolean</code>).</p>
+      <p><code>console.log()</code> muestra un valor en la salida.</p>
+
+      <h3>Ejemplo: léelo, cámbialo y ejecútalo</h3>
+      <div class="caja ejemplo">
+        <div class="titulo">Ejemplo</div>
+        <textarea id="ejemplo1" rows="9" spellcheck="false">const nombre = "Ana";
+let edad = 20;
+edad = edad + 1;
+const estudia = true;
+
+console.log("Hola, " + nombre);
+console.log("Edad:", edad);
+console.log(typeof edad, typeof nombre, typeof estudia);</textarea>
+        <div class="botones">
+          <button class="amarillo" onclick="correrEjemplo(1)">Ejecutar</button>
+          <button onclick="restablecer('ejemplo', 1)">Restablecer</button>
+        </div>
+        <pre id="salida1" class="salida"></pre>
+      </div>
+
+      <h3>Ejercicio</h3>
+      <p>Crea la constante <code>ciudad</code> con el nombre de una ciudad (texto) y la variable <code>puntos</code> con valor 10. Luego súmale 5 a <code>puntos</code>.</p>
+      <div class="caja ejercicio">
+        <div class="titulo">Tu turno</div>
+        <textarea id="ejercicio1" rows="5" spellcheck="false">// Escribe tu código aquí
+</textarea>
+        <div class="botones">
+          <button class="amarillo" onclick="correrEjercicio(1)">Ejecutar</button>
+          <button onclick="comprobar(1)">Comprobar</button>
+          <button onclick="restablecer('ejercicio', 1)">Restablecer</button>
+        </div>
+        <pre id="salidaEj1" class="salida"></pre>
+        <ul id="pruebas1" class="pruebas"></ul>
+        <p id="mensaje1" class="mensaje"></p>
+      </div>
+    </section>
+
+    <!-- LECCIÓN 2 -->
+    <section class="leccion" id="leccion2">
+      <h2><span class="numero">2</span> Operadores y texto</h2>
+      <p>Con operadores haces cálculos (<code>+ - * / %</code>), comparas (<code>=== !== &gt; &lt;</code>) y combinas condiciones (<code>&amp;&amp;</code> y, <code>||</code> o). Para mezclar texto y variables usa <b>plantillas</b> con comillas invertidas y <code>${ }</code>.</p>
+      <p>Usa siempre <code>===</code> para comparar: es más estricto y evita sorpresas.</p>
+
+      <h3>Ejemplo: léelo, cámbialo y ejecútalo</h3>
+      <div class="caja ejemplo">
+        <div class="titulo">Ejemplo</div>
+        <textarea id="ejemplo2" rows="8" spellcheck="false">const a = 7;
+const b = 2;
+console.log(a + b, a - b, a * b, a / b);
+console.log("Resto:", a % b);
+console.log("¿a es mayor?", a > b);
+console.log("¿7 === '7'?", a === "7");
+console.log(`La suma de ${a} y ${b} es ${a + b}`);</textarea>
+        <div class="botones">
+          <button class="amarillo" onclick="correrEjemplo(2)">Ejecutar</button>
+          <button onclick="restablecer('ejemplo', 2)">Restablecer</button>
+        </div>
+        <pre id="salida2" class="salida"></pre>
+      </div>
+
+      <h3>Ejercicio</h3>
+      <p>Con <code>precio</code> y <code>cantidad</code> ya definidos, crea <code>total</code> (precio por cantidad) y <code>mensaje</code> con el texto <code>Total: 36</code> usando una plantilla.</p>
+      <div class="caja ejercicio">
+        <div class="titulo">Tu turno</div>
+        <textarea id="ejercicio2" rows="6" spellcheck="false">const precio = 12;
+const cantidad = 3;
+
+// Crea total y mensaje
+</textarea>
+        <div class="botones">
+          <button class="amarillo" onclick="correrEjercicio(2)">Ejecutar</button>
+          <button onclick="comprobar(2)">Comprobar</button>
+          <button onclick="restablecer('ejercicio', 2)">Restablecer</button>
+        </div>
+        <pre id="salidaEj2" class="salida"></pre>
+        <ul id="pruebas2" class="pruebas"></ul>
+        <p id="mensaje2" class="mensaje"></p>
+      </div>
+    </section>
+
+    <!-- LECCIÓN 3 -->
+    <section class="leccion" id="leccion3">
+      <h2><span class="numero">3</span> Condicionales</h2>
+      <p>Un <b>condicional</b> permite que el programa decida qué hacer. Si la condición dentro de <code>if (...)</code> es verdadera se ejecuta ese bloque; si no, pasa a <code>else if</code> o a <code>else</code>.</p>
+
+      <h3>Ejemplo: léelo, cámbialo y ejecútalo</h3>
+      <div class="caja ejemplo">
+        <div class="titulo">Ejemplo</div>
+        <textarea id="ejemplo3" rows="10" spellcheck="false">const nota = 72;
+
+if (nota >= 90) {
+  console.log("Excelente");
+} else if (nota >= 60) {
+  console.log("Aprobado");
+} else {
+  console.log("A repasar");
+}</textarea>
+        <div class="botones">
+          <button class="amarillo" onclick="correrEjemplo(3)">Ejecutar</button>
+          <button onclick="restablecer('ejemplo', 3)">Restablecer</button>
+        </div>
+        <pre id="salida3" class="salida"></pre>
+      </div>
+
+      <h3>Ejercicio</h3>
+      <p>Si <code>temperatura</code> es 25 o más, guarda <code>"ligera"</code> en <code>ropa</code>; si no, guarda <code>"abrigo"</code>. Usa <code>if</code> y <code>else</code>.</p>
+      <div class="caja ejercicio">
+        <div class="titulo">Tu turno</div>
+        <textarea id="ejercicio3" rows="6" spellcheck="false">const temperatura = 31;
+let ropa;
+
+// Completa el condicional
+</textarea>
+        <div class="botones">
+          <button class="amarillo" onclick="correrEjercicio(3)">Ejecutar</button>
+          <button onclick="comprobar(3)">Comprobar</button>
+          <button onclick="restablecer('ejercicio', 3)">Restablecer</button>
+        </div>
+        <pre id="salidaEj3" class="salida"></pre>
+        <ul id="pruebas3" class="pruebas"></ul>
+        <p id="mensaje3" class="mensaje"></p>
+      </div>
+    </section>
+
+    <!-- LECCIÓN 4 -->
+    <section class="leccion" id="leccion4">
+      <h2><span class="numero">4</span> Bucles</h2>
+      <p>Un <b>bucle</b> repite instrucciones. <code>for</code> se usa cuando sabes cuántas veces: tiene inicio, condición y paso. <code>while</code> repite mientras la condición sea verdadera.</p>
+      <p>Cuidado: si la condición nunca se vuelve falsa, el bucle no termina y la pestaña se congela. Si pasa, recarga la página.</p>
+
+      <h3>Ejemplo: léelo, cámbialo y ejecútalo</h3>
+      <div class="caja ejemplo">
+        <div class="titulo">Ejemplo</div>
+        <textarea id="ejemplo4" rows="10" spellcheck="false">for (let i = 1; i <= 5; i++) {
+  console.log("Vuelta " + i);
+}
+
+let cuenta = 3;
+while (cuenta > 0) {
+  console.log("Cuenta atrás:", cuenta);
+  cuenta--;
+}</textarea>
+        <div class="botones">
+          <button class="amarillo" onclick="correrEjemplo(4)">Ejecutar</button>
+          <button onclick="restablecer('ejemplo', 4)">Restablecer</button>
+        </div>
+        <pre id="salida4" class="salida"></pre>
+      </div>
+
+      <h3>Ejercicio</h3>
+      <p>Usa un bucle para sumar los números del 1 al 10 y guarda el resultado en <code>suma</code>.</p>
+      <div class="caja ejercicio">
+        <div class="titulo">Tu turno</div>
+        <textarea id="ejercicio4" rows="5" spellcheck="false">let suma = 0;
+
+// Escribe el bucle
+</textarea>
+        <div class="botones">
+          <button class="amarillo" onclick="correrEjercicio(4)">Ejecutar</button>
+          <button onclick="comprobar(4)">Comprobar</button>
+          <button onclick="restablecer('ejercicio', 4)">Restablecer</button>
+        </div>
+        <pre id="salidaEj4" class="salida"></pre>
+        <ul id="pruebas4" class="pruebas"></ul>
+        <p id="mensaje4" class="mensaje"></p>
+      </div>
+    </section>
+
+    <!-- LECCIÓN 5 -->
+    <section class="leccion" id="leccion5">
+      <h2><span class="numero">5</span> Funciones</h2>
+      <p>Una <b>función</b> es un bloque de código con nombre que puedes usar muchas veces. Recibe <i>parámetros</i> y devuelve un resultado con <code>return</code>. También puedes escribirla como <b>función flecha</b>: <code>(x) =&gt; x * 2</code>.</p>
+
+      <h3>Ejemplo: léelo, cámbialo y ejecútalo</h3>
+      <div class="caja ejemplo">
+        <div class="titulo">Ejemplo</div>
+        <textarea id="ejemplo5" rows="9" spellcheck="false">function saludar(nombre) {
+  return "Hola, " + nombre + "!";
+}
+
+const cuadrado = (n) => n * n;
+
+console.log(saludar("Luis"));
+console.log(cuadrado(6));</textarea>
+        <div class="botones">
+          <button class="amarillo" onclick="correrEjemplo(5)">Ejecutar</button>
+          <button onclick="restablecer('ejemplo', 5)">Restablecer</button>
+        </div>
+        <pre id="salida5" class="salida"></pre>
+      </div>
+
+      <h3>Ejercicio</h3>
+      <p>Crea la función <code>doble(n)</code> que devuelva el número multiplicado por 2, y la función <code>esPar(n)</code> que devuelva <code>true</code> si el número es par y <code>false</code> si no.</p>
+      <div class="caja ejercicio">
+        <div class="titulo">Tu turno</div>
+        <textarea id="ejercicio5" rows="5" spellcheck="false">// Escribe las dos funciones
+</textarea>
+        <div class="botones">
+          <button class="amarillo" onclick="correrEjercicio(5)">Ejecutar</button>
+          <button onclick="comprobar(5)">Comprobar</button>
+          <button onclick="restablecer('ejercicio', 5)">Restablecer</button>
+        </div>
+        <pre id="salidaEj5" class="salida"></pre>
+        <ul id="pruebas5" class="pruebas"></ul>
+        <p id="mensaje5" class="mensaje"></p>
+      </div>
+    </section>
+
+    <!-- LECCIÓN 6 -->
+    <section class="leccion" id="leccion6">
+      <h2><span class="numero">6</span> Arreglos (listas)</h2>
+      <p>Un <b>arreglo</b> guarda varios valores en orden. Se accede por posición, empezando en 0. Métodos útiles: <code>push</code> (agrega al final), <code>includes</code> (busca), <code>forEach</code> (recorre) y <code>map</code> (crea un arreglo nuevo transformando cada elemento).</p>
+
+      <h3>Ejemplo: léelo, cámbialo y ejecútalo</h3>
+      <div class="caja ejemplo">
+        <div class="titulo">Ejemplo</div>
+        <textarea id="ejemplo6" rows="10" spellcheck="false">const frutas = ["manzana", "pera"];
+frutas.push("uva");
+
+console.log(frutas);
+console.log("Primera:", frutas[0]);
+console.log("Total:", frutas.length);
+console.log("¿Hay pera?", frutas.includes("pera"));
+
+frutas.forEach((f) => console.log("- " + f));</textarea>
+        <div class="botones">
+          <button class="amarillo" onclick="correrEjemplo(6)">Ejecutar</button>
+          <button onclick="restablecer('ejemplo', 6)">Restablecer</button>
+        </div>
+        <pre id="salida6" class="salida"></pre>
+      </div>
+
+      <h3>Ejercicio</h3>
+      <p>Usa <code>map</code> para crear <code>cuadrados</code>, un arreglo con el cuadrado de cada número de <code>numeros</code>.</p>
+      <div class="caja ejercicio">
+        <div class="titulo">Tu turno</div>
+        <textarea id="ejercicio6" rows="5" spellcheck="false">const numeros = [1, 2, 3, 4];
+
+// Crea cuadrados con map
+</textarea>
+        <div class="botones">
+          <button class="amarillo" onclick="correrEjercicio(6)">Ejecutar</button>
+          <button onclick="comprobar(6)">Comprobar</button>
+          <button onclick="restablecer('ejercicio', 6)">Restablecer</button>
+        </div>
+        <pre id="salidaEj6" class="salida"></pre>
+        <ul id="pruebas6" class="pruebas"></ul>
+        <p id="mensaje6" class="mensaje"></p>
+      </div>
+    </section>
+
+    <!-- LECCIÓN 7 -->
+    <section class="leccion" id="leccion7">
+      <h2><span class="numero">7</span> Objetos</h2>
+      <p>Un <b>objeto</b> agrupa datos relacionados en pares <code>clave: valor</code>. Sus valores pueden ser funciones, llamadas <i>métodos</i>. Accedes con un punto: <code>persona.nombre</code>.</p>
+
+      <h3>Ejemplo: léelo, cámbialo y ejecútalo</h3>
+      <div class="caja ejemplo">
+        <div class="titulo">Ejemplo</div>
+        <textarea id="ejemplo7" rows="13" spellcheck="false">const persona = {
+  nombre: "Marta",
+  edad: 30,
+  saludar() {
+    return "Soy " + this.nombre;
+  }
+};
+
+persona.edad = 31;
+console.log(persona.nombre, persona.edad);
+console.log(persona.saludar());
+console.log(persona);</textarea>
+        <div class="botones">
+          <button class="amarillo" onclick="correrEjemplo(7)">Ejecutar</button>
+          <button onclick="restablecer('ejemplo', 7)">Restablecer</button>
+        </div>
+        <pre id="salida7" class="salida"></pre>
+      </div>
+
+      <h3>Ejercicio</h3>
+      <p>Crea el objeto <code>mascota</code> con <code>nombre</code> (texto), <code>edad</code> (número) y un método <code>hablar()</code> que devuelva un texto.</p>
+      <div class="caja ejercicio">
+        <div class="titulo">Tu turno</div>
+        <textarea id="ejercicio7" rows="5" spellcheck="false">// Crea el objeto mascota
+</textarea>
+        <div class="botones">
+          <button class="amarillo" onclick="correrEjercicio(7)">Ejecutar</button>
+          <button onclick="comprobar(7)">Comprobar</button>
+          <button onclick="restablecer('ejercicio', 7)">Restablecer</button>
+        </div>
+        <pre id="salidaEj7" class="salida"></pre>
+        <ul id="pruebas7" class="pruebas"></ul>
+        <p id="mensaje7" class="mensaje"></p>
+      </div>
+    </section>
+
+    <!-- LECCIÓN 8 -->
+    <section class="leccion" id="leccion8">
+      <h2><span class="numero">8</span> JavaScript en la página (DOM)</h2>
+      <p>En el navegador, JavaScript puede cambiar lo que ves. El <b>DOM</b> es el árbol de elementos de la página. Con <code>document.getElementById</code> eliges uno, y con <code>textContent</code> cambias su texto. Con <code>addEventListener</code> reaccionas a clics.</p>
+
+      <h3>Ejemplo: léelo, cámbialo y ejecútalo</h3>
+      <div class="caja ejemplo">
+        <div class="titulo">Ejemplo</div>
+        <textarea id="ejemplo8" rows="13" spellcheck="false">const lienzo = document.getElementById("lienzo");
+const boton = document.createElement("button");
+let clics = 0;
+
+boton.textContent = "Púlsame";
+boton.addEventListener("click", () => {
+  clics++;
+  boton.textContent = "Clics: " + clics;
+});
+
+lienzo.innerHTML = "";
+lienzo.append(boton);</textarea>
+        <div class="recuadro" id="lienzo"></div>
+        <div class="botones">
+          <button class="amarillo" onclick="correrEjemplo(8)">Ejecutar</button>
+          <button onclick="restablecer('ejemplo', 8)">Restablecer</button>
+        </div>
+        <pre id="salida8" class="salida"></pre>
+      </div>
+
+      <h3>Ejercicio</h3>
+      <p>Cambia el texto del recuadro de abajo a <code>¡Hola DOM!</code> usando <code>textContent</code>.</p>
+      <div class="caja ejercicio">
+        <div class="titulo">Tu turno</div>
+        <textarea id="ejercicio8" rows="5" spellcheck="false">const tablero = document.getElementById("tablero");
+
+// Cambia su texto
+</textarea>
+        <div class="recuadro" id="tablero">Recuadro vacío</div>
+        <div class="botones">
+          <button class="amarillo" onclick="correrEjercicio(8)">Ejecutar</button>
+          <button onclick="comprobar(8)">Comprobar</button>
+          <button onclick="restablecer('ejercicio', 8)">Restablecer</button>
+        </div>
+        <pre id="salidaEj8" class="salida"></pre>
+        <ul id="pruebas8" class="pruebas"></ul>
+        <p id="mensaje8" class="mensaje"></p>
+      </div>
+    </section>
+
+    <footer>Hecho con HTML, CSS y JavaScript. Tu progreso se guarda en este navegador.</footer>
+  </main>
+
+</div>
+
+<script src="programa.js"></script>
+</body>
+</html>

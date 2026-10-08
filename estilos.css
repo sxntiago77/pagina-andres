@@ -1,0 +1,263 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: "Bricolage Grotesque", Arial, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  background-color: #f3f3f3;
+  color: #1a1a1a;
+}
+
+.pagina {
+  display: grid;
+  grid-template-columns: 270px 1fr;
+  min-height: 100vh;
+}
+
+.lateral {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: auto;
+  padding: 28px 22px;
+  background: linear-gradient(180deg, #0a0a0a, #1f1f1f);
+  color: white;
+}
+
+.marca {
+  font-weight: 800;
+  font-size: 1.25rem;
+  margin: 0 0 4px 0;
+}
+
+.marca span {
+  background-color: #e5090f;
+  color: white;
+  padding: 0 8px;
+  border-radius: 99px;
+}
+
+.subtitulo {
+  margin: 0 0 18px 0;
+  color: #bdbdbd;
+  font-size: 0.9rem;
+}
+
+nav a {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  color: #f2f2f2;
+  text-decoration: none;
+  padding: 7px 8px;
+  border-radius: 99px;
+  font-size: 0.95rem;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.num {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.15);
+  display: grid;
+  place-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  flex-shrink: 0;
+}
+
+nav a.done .num {
+  background-color: #e5090f;
+  color: white;
+}
+
+.progreso {
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #bdbdbd;
+}
+
+.fondo-barra {
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 99px;
+  margin-top: 6px;
+  overflow: hidden;
+}
+
+#barra {
+  height: 100%;
+  width: 0%;
+  background-color: #e5090f;
+  border-radius: 99px;
+}
+
+main {
+  padding: 40px 50px 80px 50px;
+  max-width: 900px;
+}
+
+h1 {
+  font-size: 3rem;
+  line-height: 1.1;
+  margin: 0 0 14px 0;
+  font-weight: 800;
+  color: #0a0a0a;
+}
+
+.intro {
+  font-size: 1.15rem;
+  color: #5c5c5c;
+  max-width: 60ch;
+}
+
+.inicio {
+  background-color: white;
+  border-radius: 24px;
+  padding: 25px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.leccion {
+  margin-top: 64px;
+}
+
+h2 {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1.8rem;
+  margin: 0 0 12px 0;
+  font-weight: 800;
+  color: #0a0a0a;
+}
+
+.numero {
+  background-color: #e5090f;
+  color: white;
+  border-radius: 50%;
+  min-width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  font-size: 1.2rem;
+}
+
+h3 {
+  font-size: 1.05rem;
+  margin: 26px 0 8px 0;
+  color: #b30000;
+}
+
+code {
+  font-family: "JetBrains Mono", Consolas, monospace;
+  font-size: 0.88em;
+  background-color: #f6e3e3;
+  color: #b30000;
+  padding: 1px 6px;
+  border-radius: 6px;
+}
+
+.caja {
+  background-color: white;
+  border-radius: 18px;
+  overflow: hidden;
+  margin: 10px 0 6px 0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+.ejemplo {
+  border-top: 6px solid #0a0a0a;
+}
+
+.ejercicio {
+  border-top: 6px solid #e5090f;
+}
+
+.titulo {
+  padding: 10px 16px;
+  font-weight: 600;
+  color: #0a0a0a;
+  background-color: #fafafa;
+  border-bottom: 1px solid #e6e6e6;
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  border: none;
+  resize: vertical;
+  background-color: #121212;
+  color: #f5f5f5;
+  font-family: "JetBrains Mono", Consolas, monospace;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  padding: 14px 16px;
+}
+
+textarea:focus {
+  outline: 3px solid #e5090f;
+  outline-offset: -3px;
+}
+
+.recuadro {
+  margin: 12px 16px;
+  padding: 14px;
+  border: 2px dashed #cfcfcf;
+  border-radius: 14px;
+  background-color: #fafafa;
+  min-height: 56px;
+}
+
+.botones {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  padding: 12px 16px;
+}
+
+button {
+  font-family: inherit;
+  font-weight: 600;
+  font-size: 0.9rem;
+  border: 2px solid #0a0a0a;
+  background-color: white;
+  color: #0a0a0a;
+  padding: 7px 18px;
+  border-radius: 99px;
+  cursor: pointer;
+}
+
+button.amarillo {
+  background-color: #e5090f;
+  border-color: #e5090f;
+  color: white;
+}
+
+button:hover {
+  background-color: #0a0a0a;
+  border-color: #0a0a0a;
+  color: white;
+}
+
+.salida {
+  margin: 0;
+  padding: 12px 16px;
+  background-color: #0a0a0a;
+  color: #ff5a5f;
+  font-family: "JetBrains Mono", Consolas, monospace;
+  font-size: 0.88rem;
+  white-space: pre-wrap;
+  min-height: 44px;
+}
